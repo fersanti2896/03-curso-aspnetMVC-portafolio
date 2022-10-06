@@ -1,15 +1,24 @@
 ﻿@model Persona 
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Página Principal";
+    DateTime fecha = DateTime.Now;
+    var nombres = new List<string>() { "Fernando", "Mar", "Wendy" };
 }
 
 <div class="text-center">
     <h1 class="display-4">Soy @Model.Name (@Model.Age)</h1>
     <h5>Soy un desarrollador Full Stack especializado en tecnologías FrontEnd y Backend</h5>
+    <h5>@fecha.ToString("dd/MM/yyyy hh:mm:ss tt")</h5>
 
     <img src="~/images/imagen.png" 
          alt="Foto de Fernando"
          class="img-fluid rounded-circle"
          id="foto" />
+
+    <ul>
+        @foreach (var item in nombres) {
+            <li>@item</li>
+        }
+    </ul>
 </div>
