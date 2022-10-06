@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 /* Inyectando la dependencia */
-builder.Services.AddTransient<ProyectosRepository>();
+builder.Services.AddTransient<IRepositoryProyectos, ProyectosRepository>();
 
 var app = builder.Build();
 

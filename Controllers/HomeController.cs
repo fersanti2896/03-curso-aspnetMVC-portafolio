@@ -6,9 +6,9 @@ using System.Diagnostics;
 namespace Portafolio.Controllers {
     public class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
-        private readonly ProyectosRepository _proyectosRepository;
+        private readonly IRepositoryProyectos _proyectosRepository;
 
-        public HomeController(ILogger<HomeController> logger, ProyectosRepository proyectosRepository) {
+        public HomeController(ILogger<HomeController> logger, IRepositoryProyectos proyectosRepository) {
             _logger = logger;
             this._proyectosRepository = proyectosRepository;
         }

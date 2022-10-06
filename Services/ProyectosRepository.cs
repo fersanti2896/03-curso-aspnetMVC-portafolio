@@ -1,7 +1,11 @@
 ﻿using Portafolio.Models;
 
 namespace Portafolio.Services {
-    public class ProyectosRepository {
+    public interface IRepositoryProyectos {
+        List<ProyectModel> ObtenerProyectos();
+    }
+
+    public class ProyectosRepository : IRepositoryProyectos {
         public List<ProyectModel> ObtenerProyectos() {
             return new List<ProyectModel>() {
                 new ProyectModel {
