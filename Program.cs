@@ -8,6 +8,10 @@ builder.Services.AddControllersWithViews();
 /* Inyectando la dependencia */
 builder.Services.AddTransient<IRepositoryProyectos, ProyectosRepository>();
 
+builder.Services.AddTransient<ServiciosTransitorio>();
+builder.Services.AddSingleton<ServiciosRepository>();
+builder.Services.AddScoped<ServiciosDelimitado>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
