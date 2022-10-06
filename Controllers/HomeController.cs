@@ -38,8 +38,10 @@ namespace Portafolio.Controllers {
             return View(modelo);
         }
 
-        public IActionResult Privacy() {
-            return View();
+        public IActionResult Proyectos() {
+            var proyectos = _proyectosRepository.ObtenerProyectos();
+
+            return View(proyectos);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
