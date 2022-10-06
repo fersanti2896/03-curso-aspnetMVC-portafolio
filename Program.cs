@@ -12,6 +12,8 @@ builder.Services.AddTransient<ServiciosTransitorio>();
 builder.Services.AddSingleton<ServiciosRepository>();
 builder.Services.AddScoped<ServiciosDelimitado>();
 
+builder.Services.AddTransient<ISendEmail, SendEmailRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -10,17 +10,20 @@ namespace Portafolio.Controllers {
         private readonly ServiciosDelimitado serviciosDelimitado;
         private readonly ServiciosRepository serviciosRepository;
         private readonly ServiciosTransitorio serviciosTransitorio;
+        private readonly ISendEmail sendEmail;
 
         public HomeController(ILogger<HomeController> logger, 
                               IRepositoryProyectos proyectosRepository,
                               ServiciosDelimitado serviciosDelimitado,
                               ServiciosRepository serviciosRepository,
-                              ServiciosTransitorio serviciosTransitorio) {
+                              ServiciosTransitorio serviciosTransitorio, 
+                              ISendEmail sendEmail) {
             _logger = logger;
             this._proyectosRepository = proyectosRepository;
             this.serviciosDelimitado = serviciosDelimitado;
             this.serviciosRepository = serviciosRepository;
             this.serviciosTransitorio = serviciosTransitorio;
+            this.sendEmail = sendEmail;
         }
 
         public IActionResult Index() {
@@ -49,8 +52,8 @@ namespace Portafolio.Controllers {
         }
 
         [HttpPost]
-        public IActionResult Contacto(ContactoModel contacto) {
-
+        public async Task<IActionResult> Contacto(ContactoModel contacto) {
+            await sendEmail.Enviar(contacto);
 
             return RedirectToAction("Gracias");
         }
