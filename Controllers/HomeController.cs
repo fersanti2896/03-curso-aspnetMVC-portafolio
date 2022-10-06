@@ -11,16 +11,43 @@ namespace Portafolio.Controllers {
         }
 
         public IActionResult Index() {
-            var persona = new Persona() {
-                Name = "José Fernando Nicolás Santiago",
-                Age = 25
-            };
+            var proyectos = ObtenerProyectos().Take(3).ToList();
+            var modelo = new HomeModel() { Proyectos = proyectos };
 
-            return View(persona);
+            return View(modelo);
         }
 
         public IActionResult Privacy() {
             return View();
+        }
+
+        public List<ProyectModel> ObtenerProyectos() {
+            return new List<ProyectModel>() { 
+                new ProyectModel {
+                    Titulo = "Contadores Cabañas", 
+                    Descripcion = "Plataforma de presentación realizada en ASP.NET Core",
+                    Link = "https://www.google.com",
+                    ImgUrl = "/images/amazon.png"
+                },
+                 new ProyectModel {
+                    Titulo = "Legal Advise",
+                    Descripcion = "Plataforma de presentación realizada en Angular",
+                    Link = "https://www.google.com",
+                    ImgUrl = "/images/nyt.png"
+                },
+                new ProyectModel {
+                    Titulo = "Mis contadores",
+                    Descripcion = "Plataforma de presentación realizada en Angular",
+                    Link = "https://www.google.com",
+                    ImgUrl = "/images/reddit.png"
+                },
+                new ProyectModel {
+                    Titulo = "Sistema de Paga",
+                    Descripcion = "Plataforma de backend realizado en Nodejs",
+                    Link = "https://www.google.com",
+                    ImgUrl = "/images/steam.png"
+                }
+            };
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
