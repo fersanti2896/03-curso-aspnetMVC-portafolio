@@ -15,9 +15,6 @@ namespace Portafolio.Controllers {
                 Name = "José Fernando Nicolás Santiago",
                 Age = 25
             };
-            
-            //ViewBag.Name = "J Fernando Nicolás Santiago";
-            //ViewBag.Age = 25;
 
             return View(persona);
         }

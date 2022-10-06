@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Página Principal";
     DateTime fecha = DateTime.Now;
-    var nombres = new List<string>() { "Fernando", "Mar", "Wendy" };
 }
 
 <div class="text-center">
@@ -15,10 +14,48 @@
          alt="Foto de Fernando"
          class="img-fluid rounded-circle"
          id="foto" />
+</div>
 
-    <ul>
-        @foreach (var item in nombres) {
-            <li>@item</li>
-        }
-    </ul>
+<div class="row justify-content-center text-center bg-primary">
+    <div class="col col-md-7 seccion-bienvenida">
+        <h3>Te doy la bienvenida a mi portafolio</h3>
+        <p>He estado desarrollando software profesionalmente desde el año 2018. He tenido el privilegio
+            de trabajar para una empresa donde tuve la oportunidad de realizar proyectos para empresas como 
+            Grupo ML Incloud y SOC Asesores, usando tecnologías como C#/ASP.NET con Entity Framework, 
+            JavaScript (Angular), SQL Server, entre otros. 
+        </p>
+    </div>
+</div>
+
+<div style="margin-top: -105px">
+    <div class="row justify-content-md-center text-center">
+        <div class="col col-3 bg-white cuadro habilidades">
+            <h4>Backend</h4>
+            <p>Trabajo desde el desarrollo, pruebas automáticas y puestas en producción.</p>
+
+            <p class="text-primary cabecera">Stack:</p>
+            <p>ASP.NET Core, SQL Server y Nodejs</p>
+            <p class="text-primary cabecera">Experiencia:</p>
+            <ul>
+                <li>Web APIs</li>
+                <li>Dapper</li>
+                <li>Queryes especiales</li>
+                <li>Principios SOLID</li>
+            </ul>
+        </div>
+        <div class="col col-3 bg-white cuadro2 habilidades">
+            <h4>Frontend</h4>
+            <p>Trabajo desde la interfaz, cumliendo los requerimientos del negocio.</p>
+
+            <p class="text-primary cabecera">Stack:</p>
+            <p>JavaScript con Angular y Blazor</p>
+            <p class="text-primary cabecera">Experiencia:</p>
+            <ul>
+                <li>Componentes</li>
+                <li>Consumo de APIs</li>
+                <li>Pipes</li>
+                <li>Principios SOLID</li>
+            </ul>
+        </div>
+    </div>
 </div>
